@@ -1,20 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-const img = "https://picsum.photos/200";
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const customStyle = {
-  color: "red",
-  fontSize: "20px",
-  border: "1px solid black"
+const time = new Date().getHours();
+
+let customStyle = {};
+
+let salutation;
+
+if(time < 12)
+{
+  salutation = "Morning";
+  customStyle.color = "red";
+} else if(time > 12 && time < 18) {
+  salutation = "Afternoon";
+  customStyle.color = "green";
+} else if(time > 18 && time < 24) {
+  salutation = "Evening";
+  customStyle.color = "blue";
 }
 
-customStyle.color = "blue";
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <div>
-    <h1 style={customStyle}>Hello World!</h1>
+    <h1 style={customStyle}>Good {salutation}!</h1>
   </div>
 );
 
