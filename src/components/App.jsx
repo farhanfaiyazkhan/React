@@ -1,12 +1,10 @@
 import React from "react";
 import Heading from "./Heading";
-import List from "./List";
 
-function App() {
+function App(){
     return (
         <div>
-        <Heading />
-        <List />
+            <Heading />
         </div>
     );
 }
